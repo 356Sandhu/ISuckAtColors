@@ -1,5 +1,5 @@
-const box1 = document.getElementById('box-1');
-const box2 = document.getElementById('box-2');
+const box1 = document.getElementById('c-1');
+const box2 = document.getElementById('c-2');
 
 generateRandomH = () =>{
   const x = Math.round(Math.random() * 360);
