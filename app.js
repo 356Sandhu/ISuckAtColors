@@ -18,13 +18,14 @@ const enforceColorWheel = (hue) =>{
 const generateString = (hue) => `hsl(${hue}, 60%, 50%)`;
 
 
-// Complimentary Colors
+// const generateMonochromaticSet = () =>{}
 
-const generateComplimentaryHue = pHue => enforceColorWheel(pHue - 180);
+
+// Complimentary Colors
 
 const generateComplimentaryPair = () =>{
   const pHue = generateRandomHue();
-  const sHue = generateComplimentaryHue(pHue);
+  const sHue = enforceColorWheel(pHue - 180);
   const pColor = generateString(pHue);
   const sColor = generateString(sHue);
   return [pColor, sColor];
