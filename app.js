@@ -1,3 +1,8 @@
+const boxm1 = document.getElementById('m-1');
+const boxm2 = document.getElementById('m-2');
+const boxm3 = document.getElementById('m-3');
+const boxm4 = document.getElementById('m-4');
+const boxm5 = document.getElementById('m-5');
 const boxc1 = document.getElementById('c-1');
 const boxc2 = document.getElementById('c-2');
 const boxa1 = document.getElementById('a-1');
@@ -15,10 +20,19 @@ const enforceColorWheel = (hue) =>{
   return hue;
 };
 
-const generateString = (hue) => `hsl(${hue}, 60%, 50%)`;
+const generateString = (hue) => `hsl(${hue}, 50%, 50%)`;
+const generateShade = (hue, s) => `hsl(${hue}, ${s}%, ${s}%)`;
 
 
-// const generateMonochromaticSet = () =>{}
+const generateMonochromaticSet = () =>{
+  const hue = generateRandomHue();
+  const color = generateString(hue);
+  const shadel = generateShade(hue, 30);
+  const shademl = generateShade(hue, 40);
+  const shademr = generateShade(hue, 60);
+  const shader = generateShade(hue, 70);
+  return [color, shadel, shademl, shademr, shader];
+}
 
 
 // Complimentary Colors
@@ -44,6 +58,18 @@ const generateAnagulousPair = () =>{
 }
 
 
+// Paint Colors
+
+const paintMonochromatic = () => {
+  const colors = generateMonochromaticSet();
+  console.log(colors);
+  boxm1.style.backgroundColor = colors[1];
+  boxm2.style.backgroundColor = colors[2];
+  boxm3.style.backgroundColor = colors[0];
+  boxm4.style.backgroundColor = colors[3];
+  boxm5.style.backgroundColor = colors[4];
+};
+
 const paintComplimentary = () => {
   const colors = generateComplimentaryPair();
   boxc1.style.backgroundColor = colors[0];
@@ -57,8 +83,11 @@ const paintAnagulous = () => {
   boxa3.style.backgroundColor = colors[2];
 };
 
+// Refresh Buttons
+mRefresh.addEventListener('click', paintMonochromatic);
 cRefresh.addEventListener('click', paintComplimentary);
 aRefresh.addEventListener('click', paintAnagulous);
 
+paintMonochromatic();
 paintComplimentary();
 paintAnagulous();
