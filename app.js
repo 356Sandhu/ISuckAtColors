@@ -14,3 +14,5 @@ if(secondaryColor < 0){
 
 box1.style.backgroundColor = `hsl(${primaryColor}, 50%, 50%)`;
 box2.style.backgroundColor = `hsl(${secondaryColor}, 50%, 50%)`;
+box1.style.color = `hsl(${secondaryColor}, 50%, 50%)`;
+box2.style.color = `hsl(${primaryColor}, 50%, 50%)`;
