@@ -26,6 +26,13 @@ h2{
   justify-content: space-around;
 }
 
+.monochromatic{
+  height: 30%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
 .anagulous{
   height: 50%;
   width: 100%;
@@ -45,4 +52,8 @@ h2{
 
 .anagulous .box{
   width: 30vw;
+}
+
+.monochromatic .box{
+  width: 18vw;
 }
