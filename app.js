@@ -6,10 +6,9 @@ const boxa3 = document.getElementById('a-3');
 const cRefresh = document.getElementById('cRefresh');
 const aRefresh = document.getElementById('aRefresh');
 
-const generateRandomHue = () =>{
-  const x = Math.round(Math.random() * 360);
-  return x;
-};
+// Universal Functions
+
+const generateRandomHue = () => Math.round(Math.random() * 360);
 
 const enforceColorWheel = (hue) =>{
   if(hue < 0){hue = 360 + hue;}
@@ -18,10 +17,10 @@ const enforceColorWheel = (hue) =>{
 
 const generateString = (hue) => `hsl(${hue}, 60%, 50%)`;
 
-const generateComplimentaryHue = pHue => {
-  let sHue = enforceColorWheel(pHue - 180);
-  return sHue;
-};
+
+// Complimentary Colors
+
+const generateComplimentaryHue = pHue => enforceColorWheel(pHue - 180);
 
 const generateComplimentaryPair = () =>{
   const pHue = generateRandomHue();
@@ -30,6 +29,8 @@ const generateComplimentaryPair = () =>{
   const sColor = generateString(sHue);
   return [pColor, sColor];
 };
+
+// Anagulous Colors
 
 const generateAnagulousPair = () =>{
   const pHue = generateRandomHue();
@@ -40,6 +41,7 @@ const generateAnagulousPair = () =>{
   const tColor = generateString(tHue);
   return [pColor, sColor, tColor];
 }
+
 
 const paintComplimentary = () => {
   const colors = generateComplimentaryPair();
@@ -59,4 +61,3 @@ aRefresh.addEventListener('click', paintAnagulous);
 
 paintComplimentary();
 paintAnagulous();
-
