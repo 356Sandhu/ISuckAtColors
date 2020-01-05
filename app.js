@@ -10,6 +10,12 @@ const boxa2 = document.getElementById('a-2');
 const boxa3 = document.getElementById('a-3');
 const cRefresh = document.getElementById('cRefresh');
 const aRefresh = document.getElementById('aRefresh');
+const mSaturation = document.getElementById('mSaturation');
+const mLightness = document.getElementById('mLightness');
+const cSaturation = document.getElementById('cSaturation');
+const cLightness = document.getElementById('cLightness');
+const aSaturation = document.getElementById('aSaturation');
+const aLightness = document.getElementById('aLightness');
 
 // Universal Functions
 
@@ -21,47 +27,47 @@ const enforceColorWheel = (hue) =>{
 };
 
 const generateString = (hue) => `hsl(${hue}, 50%, 50%)`;
-const generateShade = (hue, s) => `hsl(${hue}, ${s}%, ${s}%)`;
+const generateShade = (hue, s, l) => `hsl(${hue}, ${s}%, ${l}%)`;
 
 
-const generateMonochromaticSet = () =>{
+const generateMonochromaticSet = (s, l) =>{
   const hue = generateRandomHue();
-  const color = generateString(hue);
-  const shadel = generateShade(hue, 30);
-  const shademl = generateShade(hue, 40);
-  const shademr = generateShade(hue, 60);
-  const shader = generateShade(hue, 70);
+  const color = generateShade(hue, s, l);
+  const shadel = generateShade(hue, s, l-20);
+  const shademl = generateShade(hue, s, l-10);
+  const shademr = generateShade(hue, s, eval(l) + eval(10));
+  const shader = generateShade(hue, s,  eval(l) + eval(20));
   return [color, shadel, shademl, shademr, shader];
 }
 
 
 // Complimentary Colors
 
-const generateComplimentaryPair = () =>{
+const generateComplimentaryPair = (s, l) =>{
   const pHue = generateRandomHue();
   const sHue = enforceColorWheel(pHue - 180);
-  const pColor = generateString(pHue);
-  const sColor = generateString(sHue);
+  const pColor = generateShade(pHue, s, l);
+  const sColor = generateShade(sHue, s, l);
   return [pColor, sColor];
 };
 
 // Anagulous Colors
 
-const generateAnagulousPair = () =>{
+const generateAnagulousPair = (s, l) =>{
   const pHue = generateRandomHue();
   const sHue = enforceColorWheel(pHue + 30);
   const tHue = enforceColorWheel(pHue - 30);
-  const pColor = generateString(pHue);
-  const sColor = generateString(sHue);
-  const tColor = generateString(tHue);
+  const pColor = generateShade(pHue, s, l);
+  const sColor = generateShade(sHue, s, l);
+  const tColor = generateShade(tHue, s, l);
   return [pColor, sColor, tColor];
 }
 
 
 // Paint Colors
 
-const paintMonochromatic = () => {
-  const colors = generateMonochromaticSet();
+const paintMonochromatic = (s, l) => {
+  const colors = generateMonochromaticSet(s, l);
   boxm1.style.backgroundColor = colors[1];
   boxm2.style.backgroundColor = colors[2];
   boxm3.style.backgroundColor = colors[0];
@@ -70,15 +76,15 @@ const paintMonochromatic = () => {
   paintRGB();
 };
 
-const paintComplimentary = () => {
-  const colors = generateComplimentaryPair();
+const paintComplimentary = (s, l) => {
+  const colors = generateComplimentaryPair(s, l);
   boxc1.style.backgroundColor = colors[0];
   boxc2.style.backgroundColor = colors[1];
   paintRGB();
 };
 
-const paintAnagulous = () => {
-  const colors = generateAnagulousPair();
+const paintAnagulous = (s, l) => {
+  const colors = generateAnagulousPair(s, l);
   boxa1.style.backgroundColor = colors[0];
   boxa2.style.backgroundColor = colors[1];
   boxa3.style.backgroundColor = colors[2];
@@ -93,11 +99,17 @@ const paintRGB = () => {
 }
 
 // Refresh Buttons
-mRefresh.addEventListener('click', paintMonochromatic);
-cRefresh.addEventListener('click', paintComplimentary);
-aRefresh.addEventListener('click', paintAnagulous);
+mRefresh.addEventListener('click', () => {
+  paintMonochromatic(mSaturation.value, mLightness.value);
+});
+cRefresh.addEventListener('click', () => {
+  paintComplimentary(cSaturation.value, cLightness.value);
+});
+aRefresh.addEventListener('click', () => {
+  paintAnagulous(aSaturation.value, aLightness.value);
+});
 
-paintMonochromatic();
-paintComplimentary();
-paintAnagulous();
-paintRGB();
+
+paintMonochromatic(50, 50);
+paintComplimentary(100, 70);
+paintAnagulous(100, 50);

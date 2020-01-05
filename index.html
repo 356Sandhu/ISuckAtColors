@@ -9,7 +9,17 @@
 </head>
 <body>
   <h2>Monochromatic Scheme</h2>
-  <button id='mRefresh'>Refresh Scheme</button>
+  <div class="controls">
+    <div class="form-group">
+      <input type="range" name="saturation" id="mSaturation" min="20" max="80" step="1">
+      <label for="saturation">Saturation</label>
+    </div>
+    <button id='mRefresh'>Refresh Scheme</button>
+    <div class="form-group">
+      <input type="range" name="lightness" id="mLightness" min="20" max="80" step="1">
+      <label for="lightness">Lightness</label>
+    </div>  
+  </div>
   <div class="monochromatic">
     <div class="box" id="m-1"><h1>Shade</h1><code></code></div>
     <div class="box" id="m-2"><h1>Shade </h1><code></code></div>
@@ -18,13 +28,33 @@
     <div class="box" id="m-5"><h1>Shade</h1><code></code></div>
   </div>
   <h2>Complimentary Scheme</h2>
-  <button id='cRefresh'>Refresh Scheme</button>
+  <div class="controls">
+    <div class="form-group">
+      <input type="range" name="saturation" id="cSaturation" min="20" max="80" step="1">
+      <label for="saturation">Saturation</label>
+    </div>
+    <button id='cRefresh'>Refresh Scheme</button>
+    <div class="form-group">
+      <input type="range" name="lightness" id="cLightness" min="20" max="80" step="1">
+      <label for="lightness">Lightness</label>
+    </div>  
+  </div>
   <div class="complimentary">
     <div class="box" id="c-1"><h1>Primary Color</h1><code></code></div>
     <div class="box" id="c-2"><h1>Secondary Color</h1><code></code></div>
   </div>
   <h2>Anagulous Scheme</h2>
-  <button id='aRefresh'>Refresh Scheme</button>
+  <div class="controls">
+    <div class="form-group">
+      <input type="range" name="saturation" id="aSaturation" min="20" max="80" step="1">
+      <label for="saturation">Saturation</label>
+    </div>
+    <button id='aRefresh'>Refresh Scheme</button>
+    <div class="form-group">
+      <input type="range" name="lightness" id="aLightness" min="20" max="80" step="1">
+      <label for="lightness">Lightness</label>
+    </div>  
+  </div>
   <div class="anagulous">
     <div class="box" id="a-2"><h1>Left Color</h1><code></code></div>
     <div class="box" id="a-1"><h1>Main Color</h1><code></code></div>
