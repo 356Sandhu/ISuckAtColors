@@ -62,18 +62,19 @@ const generateAnagulousPair = () =>{
 
 const paintMonochromatic = () => {
   const colors = generateMonochromaticSet();
-  console.log(colors);
   boxm1.style.backgroundColor = colors[1];
   boxm2.style.backgroundColor = colors[2];
   boxm3.style.backgroundColor = colors[0];
   boxm4.style.backgroundColor = colors[3];
   boxm5.style.backgroundColor = colors[4];
+  paintRGB();
 };
 
 const paintComplimentary = () => {
   const colors = generateComplimentaryPair();
   boxc1.style.backgroundColor = colors[0];
   boxc2.style.backgroundColor = colors[1];
+  paintRGB();
 };
 
 const paintAnagulous = () => {
@@ -81,11 +82,11 @@ const paintAnagulous = () => {
   boxa1.style.backgroundColor = colors[0];
   boxa2.style.backgroundColor = colors[1];
   boxa3.style.backgroundColor = colors[2];
+  paintRGB();
 };
 
 const paintRGB = () => {
   let x = document.querySelectorAll("code");
-  console.log(x);
   x.forEach(function(c){
     c.innerHTML = window.getComputedStyle(c.parentElement).backgroundColor;
   });
