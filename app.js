@@ -4,7 +4,6 @@ const boxm3 = document.getElementById('m-3');
 const boxm4 = document.getElementById('m-4');
 const boxm5 = document.getElementById('m-5');
 const boxc1 = document.getElementById('c-1');
-var boxc1c = document.querySelector("#c-1 > code:first-of-type");
 const boxc2 = document.getElementById('c-2');
 const boxa1 = document.getElementById('a-1');
 const boxa2 = document.getElementById('a-2');
@@ -84,6 +83,14 @@ const paintAnagulous = () => {
   boxa3.style.backgroundColor = colors[2];
 };
 
+const paintRGB = () => {
+  let x = document.querySelectorAll("code");
+  console.log(x);
+  x.forEach(function(c){
+    c.innerHTML = window.getComputedStyle(c.parentElement).backgroundColor;
+  });
+}
+
 // Refresh Buttons
 mRefresh.addEventListener('click', paintMonochromatic);
 cRefresh.addEventListener('click', paintComplimentary);
@@ -92,4 +99,4 @@ aRefresh.addEventListener('click', paintAnagulous);
 paintMonochromatic();
 paintComplimentary();
 paintAnagulous();
-boxc1c.innerHTML = window.getComputedStyle(boxc1).backgroundColor;
+paintRGB();
