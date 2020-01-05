@@ -64,7 +64,7 @@ const generateAnagulousPair = (s, l) =>{
 }
 
 
-// Paint Colors
+// Paint Functions
 
 const paintMonochromatic = (s, l) => {
   const colors = generateMonochromaticSet(s, l);
