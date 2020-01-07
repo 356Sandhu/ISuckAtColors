@@ -19,6 +19,8 @@ const aLightness = document.getElementById('aLightness');
 
 // Universal Functions
 
+let curM, curC, curA;
+
 const generateRandomHue = () => Math.round(Math.random() * 360);
 
 const enforceColorWheel = (hue) =>{

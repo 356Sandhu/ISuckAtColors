@@ -24,6 +24,7 @@ body{
   margin: auto;
   text-align: center;
   padding: 12.5vh 0;
+  grid-gap: 1rem;
 }
 
 .box{
@@ -31,6 +32,7 @@ body{
   justify-content: center;
   align-items: center;
   height: 25vh;
+  border-radius: 1rem;
 }
 
 .box:hover{
@@ -38,7 +40,6 @@ body{
 }
 
 .monochromatic{
-  border-radius: 1rem 1rem 0 0;
   background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
   animation: monoIn 1s forwards ease-out;
   grid-area: box-1;
@@ -56,7 +57,6 @@ body{
 }
 
 .anagulous{
-  border-radius: 0 0 1rem 1rem;
   background-image: linear-gradient(to right, rgb(0, 85, 255) , rgb(0, 213, 255),  rgb(0, 255, 170));
   animation: anagIn 1s forwards ease-out;
   grid-area: box-3;
