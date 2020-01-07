@@ -12,6 +12,12 @@ body{
 }
 
 .container{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: 
+    "box-1"
+    "box-2"
+    "box-3";
   width: 100%;
   height: 100%;
   max-width: 1100px;
@@ -35,6 +41,7 @@ body{
   border-radius: 1rem 1rem 0 0;
   background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
   animation: monoIn 1s forwards ease-out;
+  grid-area: box-1;
 }
 
 .mono1{
@@ -45,12 +52,14 @@ body{
 .complimentary{
   background-image: linear-gradient(to right, yellow , white,  purple);
   animation: compIn 1s forwards ease-out;
+  grid-area: box-2;
 }
 
 .anagulous{
   border-radius: 0 0 1rem 1rem;
   background-image: linear-gradient(to right, rgb(0, 85, 255) , rgb(0, 213, 255),  rgb(0, 255, 170));
   animation: anagIn 1s forwards ease-out;
+  grid-area: box-3;
 }
 
 .flyOut{
