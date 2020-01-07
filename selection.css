@@ -37,6 +37,11 @@ body{
   animation: monoIn 1s forwards ease-out;
 }
 
+.mono1{
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+  animation: monoIn 1s forwards ease-out;
+}
+
 .complimentary{
   background-image: linear-gradient(to right, yellow , white,  purple);
   animation: compIn 1s forwards ease-out;
@@ -46,6 +51,14 @@ body{
   border-radius: 0 0 1rem 1rem;
   background-image: linear-gradient(to right, rgb(0, 85, 255) , rgb(0, 213, 255),  rgb(0, 255, 170));
   animation: anagIn 1s forwards ease-out;
+}
+
+.flyOut{
+  animation: flyOut 1s forwards ease-in;
+}
+
+.flyIn{
+  animation: flyIn 1s forwards ease-out;
 }
 
 .box h1{
@@ -86,3 +99,32 @@ h1{
   }
 }
 
+@keyframes flyOut{
+  100%{
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+}
+
+@keyframes flyIn{
+  0%{
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateX(0);
+    opacity: 100;
+  }
+}
+
+
+
+
+/* Testing */
+#mono1{
+  display: none;
+}
+
+#mono2{
+  display: none;
+}
