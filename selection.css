@@ -55,9 +55,14 @@ body{
   animation: flyIn 1s forwards ease-out;
 }
 
-.controls{
+.controls {
   display: flex;
-  justify-content: space-evenly;
+  width: 100%;
+}
+
+#monoCon, #compCon, #anagCon{
+  display: flex;
+  justify-content: space-around;
   width: 100%;
 }
 
@@ -76,6 +81,32 @@ body{
   background-image: linear-gradient(to right, rgb(0, 85, 255) , rgb(0, 213, 255),  rgb(0, 255, 170));
   animation: anagIn 1s forwards ease-out;
   grid-area: box-3;
+}
+
+#monoShow, #monoCon, #compShow, #compCon,  #anagShow, #anagCon{
+  display: none;
+}
+
+.boxe{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 25vh;
+}
+
+#monoShow .boxe{
+  max-width: calc(1100px / 5);
+  width: 15vw;
+}
+
+#compShow .boxe{
+  max-width: calc(1100px / 2);
+  width: 45vw;
+}
+#anagShow .boxe{
+  max-width: calc(1100px / 3);
+  width: 30vw;
 }
 
 .flyOut{

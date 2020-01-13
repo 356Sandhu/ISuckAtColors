@@ -9,27 +9,68 @@
 </head>
 <body>
   <div class="container" id="container">
-    <div class="monochromatic box" id="mono"><h1>Monochromatic</h1></div>
+
+    <!-- Control and Focus Boxes -->
     <div class="mono1 box" id="mono1">
       <div class="controls">
-        <div class="form-group">
-          <input type="range" name="saturation" id="mSaturation" min="20" max="80" step="1">
-          <label for="saturation">Saturation</label>
+        <div id="monoCon">
+          <div class="form-group">
+            <input type="range" name="saturation" id="mSaturation" min="20" max="80" step="1">
+            <label for="saturation">Saturation</label>
+          </div>
+          <button id='mRefresh'>Refresh Scheme</button>
+          <div class="form-group">
+            <input type="range" name="lightness" id="mLightness" min="20" max="80" step="1">
+            <label for="lightness">Lightness</label>
+          </div> 
         </div>
-        <button id='mRefresh'>Refresh Scheme</button>
-        <div class="form-group">
-          <input type="range" name="lightness" id="mLightness" min="20" max="80" step="1">
-          <label for="lightness">Lightness</label>
-        </div>  
+        <div id="compCon">
+          <div class="form-group">
+            <input type="range" name="saturation" id="cSaturation" min="20" max="80" step="1">
+            <label for="saturation">Saturation</label>
+          </div>
+          <button id='cRefresh'>Refresh Scheme</button>
+          <div class="form-group">
+            <input type="range" name="lightness" id="cLightness" min="20" max="80" step="1">
+            <label for="lightness">Lightness</label>
+          </div> 
+        </div>
+        <div id="anagCon">
+          <div class="form-group">
+            <input type="range" name="saturation" id="aSaturation" min="20" max="80" step="1">
+            <label for="saturation">Saturation</label>
+          </div>
+          <button id='aRefresh'>Refresh Scheme</button>
+          <div class="form-group">
+            <input type="range" name="lightness" id="aLightness" min="20" max="80" step="1">
+            <label for="lightness">Lightness</label>
+          </div> 
+        </div> 
       </div>
     </div>
     <div class="mono2 box" id="mono2">
-      <div class="box" id="m-1"><h3>Shade</h3><code></code></div>
-      <div class="box" id="m-2"><h3>Shade </h3><code></code></div>
-      <div class="box" id="m-3"><h3>Main</h3><code></code></div>
-      <div class="box" id="m-4"><h3>Shade</h3><code></code></div>
-      <div class="box" id="m-5"><h3>Shade</h3><code></code></div>
+      <div id="monoShow">
+        <div class="boxe" id="m-1"><h3>Shade</h3><code></code></div>
+        <div class="boxe" id="m-2"><h3>Shade </h3><code></code></div>
+        <div class="boxe" id="m-3"><h3>Main</h3><code></code></div>
+        <div class="boxe" id="m-4"><h3>Shade</h3><code></code></div>
+        <div class="boxe" id="m-5"><h3>Shade</h3><code></code></div>
+      </div>
+      <div id="compShow">
+        <div class="boxe" id="c-1"><h3>Primary Color</h3><code></code></div>
+        <div class="boxe" id="c-2"><h3>Secondary Color</h3><code></code></div>
+      </div>
+      <div id="anagShow">
+        <div class="boxe" id="a-2"><h3>Left Color</h3><code></code></div>
+        <div class="boxe" id="a-1"><h3>Main Color</h3><code></code></div>
+        <div class="boxe" id="a-3"><h3>Right Color</h3><code></code></div>
+      </div>
     </div>
+
+
+
+
+    <div class="monochromatic box" id="mono"><h1>Monochromatic</h1></div>
     <div class="complimentary box" id="comp"><h1>Complimentary</h1></div>
     <div class="anagulous box" id="anag"><h1>Anagulous</h1></div>
   </div>
