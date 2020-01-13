@@ -12,6 +12,9 @@ const anagShow = document.getElementById('anagShow');
 const monoCon = document.getElementById('monoCon');
 const compCon = document.getElementById('compCon');
 const anagCon = document.getElementById('anagCon');
+const mback = document.getElementById('mback');
+const cback = document.getElementById('cback');
+const aback = document.getElementById('aback');
 
 // Color 
 const boxm1 = document.getElementById('m-1');
@@ -37,6 +40,9 @@ const aLightness = document.getElementById('aLightness');
 const focusToggle = (main, box1, box2, n1, n2) =>{
   console.log('clicked');
   if(main.classList.contains('focus')){
+    mback.style.display = 'none';
+    cback.style.display = 'none';
+    aback.style.display = 'none';
     setTimeout(()=>{
       n1.style.display = 'none';
       n2.style.display = 'none';
@@ -57,12 +63,14 @@ const focusToggle = (main, box1, box2, n1, n2) =>{
       box1.style.display = 'none';
       box2.style.display = 'none';
       if(main.classList.contains('monochromatic')){
+        
         anagShow.style.display = 'none';
         compShow.style.display = 'none';
         monoShow.style.display = 'flex';
         anagCon.style.display = 'none';
         compCon.style.display = 'none';
         monoCon.style.display = 'flex';
+        mback.style.display = 'block';
       } else if(main.classList.contains('complimentary')){
         anagShow.style.display = 'none';
         compShow.style.display = 'flex';
@@ -70,6 +78,7 @@ const focusToggle = (main, box1, box2, n1, n2) =>{
         anagCon.style.display = 'none';
         compCon.style.display = 'flex';
         monoCon.style.display = 'none';
+        cback.style.display = 'block';
       } else {
         anagShow.style.display = 'flex';
         compShow.style.display = 'none';
@@ -77,6 +86,7 @@ const focusToggle = (main, box1, box2, n1, n2) =>{
         anagCon.style.display = 'flex';
         compCon.style.display = 'none';
         monoCon.style.display = 'none';
+        aback.style.display = 'block';
       }
       n1.style.display = 'flex';
       n2.style.display = 'flex';

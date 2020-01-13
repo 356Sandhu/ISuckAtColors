@@ -29,6 +29,7 @@ body{
 
 .box{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 25vh;
@@ -83,7 +84,7 @@ body{
   grid-area: box-3;
 }
 
-#monoShow, #monoCon, #compShow, #compCon,  #anagShow, #anagCon{
+#monoShow, #monoCon, #compShow, #compCon,  #anagShow, #anagCon, #mback, #cback, #aback{
   display: none;
 }
 
