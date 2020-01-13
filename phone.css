@@ -1,0 +1,17 @@
+body{
+  background-color: blue;
+}
+
+.container{
+  padding: 0;
+  height: 100vh;
+}
+
+h1{
+  font-size: 2rem;
+}
+
+.box{
+  max-width: 100vw;
+  height: 30%;
+}
